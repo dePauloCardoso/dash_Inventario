@@ -74,7 +74,7 @@ labels_tab1 = alt.Chart(source).mark_text(
 )
 
 # Criação do gráfico na tab2 com %Abs no eixo Y
-chart2 = alt.Chart(source).mark_bar(color='#2868d1').encode(
+chart2 = alt.Chart(source).mark_bar(color='#192c4f').encode(
     x='Data',  # Data no eixo X
     y='%Abs',  # %Abs no eixo Y
 ).properties(height=400)
@@ -109,11 +109,11 @@ st.markdown('### Itens')
 # Criando o gráfico de linha
 line_chart = alt.Chart(df).mark_line(
     strokeWidth=4,  # Aumenta a grossura da linha
-    color="#E8442E"  # Define a cor da linha
+    color="#bf3434"  # Define a cor da linha
 ).encode(
     x='Data',
     y='Fisico:Q'
-).properties(height=500)
+).properties(height=400)
 
 # Adicionando os nós (pontos) nos valores da linha
 points = alt.Chart(df).mark_circle(
@@ -137,7 +137,7 @@ labels_line = alt.Chart(df).mark_text(
 
 # Criando o gráfico de barras (Diferença de Contagem)
 predicate = alt.datum["<>Net"] > 0
-color = alt.condition(predicate, alt.value("#446bb4"), alt.value("#cd1f3b"))
+color = alt.condition(predicate, alt.value("#446bb4"), alt.value("#bf3434"))
 
 bars = alt.Chart(df).mark_bar().encode(
     x="Data",  # Eixo X como temporal
